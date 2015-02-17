@@ -1,6 +1,6 @@
 # coding: utf-8
 
-require 'extensions/all'
+require 'lib/require_relative'
 require_relative 'lib/slack-rtmapi/version'
 
 Gem::Specification.new do |s|

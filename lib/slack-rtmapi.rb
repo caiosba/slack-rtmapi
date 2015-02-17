@@ -1,4 +1,4 @@
-require 'extensions/all'
+require 'require_relative'
 require_relative "slack-rtmapi/client"
 require_relative "slack-rtmapi/version"
 
