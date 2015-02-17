@@ -1,6 +1,5 @@
-require 'require_relative'
-require_relative "slack-rtmapi/client"
-require_relative "slack-rtmapi/version"
+require File.expand_path('../lib/slack-rtmapi/client.rb', __FILE__)
+require File.expand_path('../lib/slack-rtmapi/version.rb', __FILE__)
 
 require 'json'
 require 'net/http'
