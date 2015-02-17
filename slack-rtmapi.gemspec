@@ -1,6 +1,6 @@
 # coding: utf-8
 
-require 'lib/require_relative'
+require File.expand_path('../lib/require_relative', __FILE__)
 require_relative 'lib/slack-rtmapi/version'
 
 Gem::Specification.new do |s|
