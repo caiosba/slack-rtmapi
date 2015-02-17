@@ -12,8 +12,13 @@ module SlackRTM
     end
 
     url = options[:slack_api_url] || 'https://slack.com/api'
-    req = Net::HTTP.post_form URI(url + '/rtm.start'), token: options[:token]
-    body = JSON.parse req.body
+    uri = URI.parse(url + '/rtm.start')
+    https = Net::HTTP.new(uri.host, uri.port)
+    https.use_ssl = true
+    req = Net::HTTP::Post.new(uri.path, { 'Content-Type' => 'application/json' })
+    req.set_form_data({ token: options[:token] })
+    res = https.request(req)
+    body = JSON.parse res.body
     URI(body['url'])
   end
 
